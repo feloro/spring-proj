@@ -9,15 +9,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-class MainController{
+class MainController {
 
     @Autowired
     AuthService authService;
 
     @ResponseBody
     @RequestMapping(value = "/welcome", method = [RequestMethod.GET])
-    public LinkedHashMap welcomePage(ModelMap map)
+    public Object welcomePage(ModelMap map)
     {
-        return [id: 1, name: 'test'];
+        return authService.getUsers().collect {[id: it.id, email: it.email]}
+        //return [id: 1, name: 'test'];
     }
 }

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <beans:beans xmlns="http://www.springframework.org/schema/mvc"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xmlns:beans="http://www.springframework.org/schema/beans"
@@ -8,18 +7,17 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
     <context:component-scan base-package="com.myapp"/>
+    <beans:import resource="db-beans.xml"/>
 
     <beans:bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <beans:property name="ignoreUnresolvablePlaceholders" value="true"/>
         <beans:property name="ignoreResourceNotFound" value="true"/>
         <beans:property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
-        <!--<beans:property name="locations">
+        <beans:property name="locations">
             <beans:list>
-                <beans:value>classpath:application.properties</beans:value>
-                <beans:value>file:${catalina.base}/conf/Catalina/localhost/application.properties</beans:value>
-                <beans:value>file:${application_properties_path}</beans:value>
+                <beans:value>classpath:config.properties</beans:value>
             </beans:list>
-        </beans:property>-->
+        </beans:property>
     </beans:bean>
     <beans:bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
         <beans:property name="cache" value="true"/>
