@@ -20,10 +20,6 @@
         </beans:property>
     </beans:bean>
 
-    <interceptors>
-        <beans:bean class="com.myapp.util.CommonHandlerInterceptor"/>
-    </interceptors>
-
     <annotation-driven>
         <message-converters>
             <beans:bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
