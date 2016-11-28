@@ -3,7 +3,7 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
 
-    <property name="endDelimiter" value="\n/\s*\n|\n/\s*$"/>
+    <property name="endDelimiter" value="\n;"/>
     <property name="splitStatements" value="false"/>
 
     <include file="2016-11-17-ist-user.sql" relativeToChangelogFile="true"/>

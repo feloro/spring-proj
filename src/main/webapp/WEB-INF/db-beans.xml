@@ -17,13 +17,13 @@
               <property name="jdbcUrl" value="${db.url}" />
               <property name="user" value="${db.username}" />
               <property name="password" value="${db.password}" />
-              <property name="initialPoolSize" value="${db.minPoolSize}" />
+              <!--<property name="initialPoolSize" value="${db.minPoolSize}" />
               <property name="minPoolSize" value="${db.minPoolSize}" />
               <property name="maxPoolSize" value="${db.maxPoolSize}" />
               <property name="acquireIncrement" value="${db.acquireIncrement}" />
               <property name="idleConnectionTestPeriod" value="3000" />
               <property name="preferredTestQuery" value="select 1" />
-              <property name="maxIdleTimeExcessConnections" value="2400" />
+              <property name="maxIdleTimeExcessConnections" value="2400" />-->
        </bean>
 
        <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
@@ -47,15 +47,10 @@
 
        <jpa:repositories base-package="com.myapp.database.repository" />
 
-       <bean id="liquibase" class="liquibase.integration.spring.SpringLiquibase">
-              <property name="dataSource" ref="dataSource" />
-              <property name="changeLog" value="classpath:changelogs/changelog.xml" />
-              <property name="changeLogParameters">
-                     <props>
-                            <prop key="splitStatements">false</prop>
-                     </props>
-              </property>
-       </bean>
+        <bean id="liquibase" class="liquibase.integration.spring.SpringLiquibase">
+            <property name="dataSource" ref="dataSource" />
+            <property name="changeLog" value="classpath:changelogs/sql/all.xml" />
+        </bean>
 
        <context:annotation-config />
        <context:component-scan base-package="com.myapp.database"/>
