@@ -19,18 +19,16 @@
             </beans:list>
         </beans:property>
     </beans:bean>
-    <beans:bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
-        <beans:property name="cache" value="true"/>
-        <beans:property name="prefix" value=""/>
-        <beans:property name="suffix" value=".html"/>
-        <beans:property name="contentType" value="text/html;charset=UTF-8"/>
-    </beans:bean>
-
-    <beans:bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
-        <beans:property name="templateLoaderPath" value="/pages/views/"/>
-    </beans:bean>
 
     <interceptors>
         <beans:bean class="com.myapp.util.CommonHandlerInterceptor"/>
     </interceptors>
+
+    <annotation-driven>
+        <message-converters>
+            <beans:bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+            <beans:bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
+            <beans:bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+        </message-converters>
+    </annotation-driven>
 </beans:beans>
