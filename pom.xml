@@ -11,14 +11,11 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-        <groovy.version>2.4.3</groovy.version>
-
-        <spring.version>4.1.6.RELEASE</spring.version>
+        <spring.version>5.0.5.RELEASE</spring.version>
         <spring.security.version>4.0.2.RELEASE</spring.security.version>
         <spring-data.version>1.8.2.RELEASE</spring-data.version>
         <hibernate.version>4.3.10.Final</hibernate.version>
-        <jackson.version>2.5.4</jackson.version>
+        <jackson.version>2.9.5</jackson.version>
     </properties>
 
     <repositories>
@@ -30,12 +27,6 @@
     </repositories>
 
     <dependencies>
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-all</artifactId>
-            <version>${groovy.version}</version>
-        </dependency>
-
         <!--Spring-->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -146,11 +137,6 @@
             <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
-<!--        <dependency>
-            <groupId>org.freemarker</groupId>
-            <artifactId>freemarker</artifactId>
-            <version>2.3.23</version>
-        </dependency>-->
     </dependencies>
 
     <build>
@@ -172,21 +158,8 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                    <compilerId>groovy-eclipse-compiler</compilerId>
                     <verbose>false</verbose>
                 </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.codehaus.groovy</groupId>
-                        <artifactId>groovy-eclipse-compiler</artifactId>
-                        <version>2.9.2-01</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.codehaus.groovy</groupId>
-                        <artifactId>groovy-eclipse-batch</artifactId>
-                        <version>2.4.3-01</version>
-                    </dependency>
-                </dependencies>
             </plugin>
         </plugins>
     </build>
