@@ -12,7 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring.version>5.0.5.RELEASE</spring.version>
-        <spring.security.version>4.0.2.RELEASE</spring.security.version>
+        <spring.security.version>5.0.4.RELEASE</spring.security.version>
         <spring-data.version>1.8.2.RELEASE</spring-data.version>
         <hibernate.version>4.3.10.Final</hibernate.version>
         <jackson.version>2.9.5</jackson.version>
@@ -22,7 +22,9 @@
         <repository>
             <id>io.spring.repo.maven.release</id>
             <url>http://repo.spring.io/release/</url>
-            <snapshots><enabled>true</enabled></snapshots>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
     </repositories>
 
@@ -136,6 +138,16 @@
             <artifactId>javax.servlet-api</artifactId>
             <version>3.1.0</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
         </dependency>
     </dependencies>
 
